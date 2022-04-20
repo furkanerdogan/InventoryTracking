@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="masterDataSet" targetNamespace="http://tempuri.org/masterDataSet.xsd" xmlns:mstns="http://tempuri.org/masterDataSet.xsd" xmlns="http://tempuri.org/masterDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="masterConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="masterConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.StokTakip.Properties.Settings.GlobalReference.Default.masterConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DepoTableAdapter" GeneratorDataComponentClassName="DepoTableAdapter" Name="Depo" UserDataComponentName="DepoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="masterConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Urunler.Urun_Adi,Depo.Depo_Id, Depo.Urun_Id, Depo.Seri_No, Depo.Adet, Depo.Tarih, Depo.Aciklama FROM Depo,Urunler where Urunler.Urun_Id=Depo.Urun_Id and Depo.Adet&gt;0</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Depo_Id" DataSetColumn="Depo_Id" />
+              <Mapping SourceColumn="Urun_Id" DataSetColumn="Urun_Id" />
+              <Mapping SourceColumn="Seri_No" DataSetColumn="Seri_No" />
+              <Mapping SourceColumn="Adet" DataSetColumn="Adet" />
+              <Mapping SourceColumn="Tarih" DataSetColumn="Tarih" />
+              <Mapping SourceColumn="Aciklama" DataSetColumn="Aciklama" />
+              <Mapping SourceColumn="Urun_Adi" DataSetColumn="Urun_Adi" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DepoCikisTableAdapter" GeneratorDataComponentClassName="DepoCikisTableAdapter" Name="DepoCikis" UserDataComponentName="DepoCikisTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="masterConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Istasyonlar.Istasyon_Id,Istasyonlar.Istasyon_Adi,Urunler.Urun_Adi,Depo.Depo_Id, Depo.Urun_Id, Depo.Seri_No, DepoCikis.Adet, DepoCikis.Tarih, DepoCikis.Aciklama, DepoCikis.DepoCikis_Id FROM Depo,Urunler,DepoCikis,Istasyonlar where Urunler.Urun_Id=Depo.Urun_Id and Depo.Depo_Id=DepoCikis.Depo_Id and Istasyonlar.Istasyon_Id=DepoCikis.Istasyon_Id 
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DepoCikis_Id" DataSetColumn="DepoCikis_Id" />
+              <Mapping SourceColumn="Depo_Id" DataSetColumn="Depo_Id" />
+              <Mapping SourceColumn="Istasyon_Id" DataSetColumn="Istasyon_Id" />
+              <Mapping SourceColumn="Tarih" DataSetColumn="Tarih" />
+              <Mapping SourceColumn="Aciklama" DataSetColumn="Aciklama" />
+              <Mapping SourceColumn="Adet" DataSetColumn="Adet" />
+              <Mapping SourceColumn="Istasyon_Adi" DataSetColumn="Istasyon_Adi" />
+              <Mapping SourceColumn="Urun_Adi" DataSetColumn="Urun_Adi" />
+              <Mapping SourceColumn="Urun_Id" DataSetColumn="Urun_Id" />
+              <Mapping SourceColumn="Seri_No" DataSetColumn="Seri_No" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="IstasyonlarTableAdapter" GeneratorDataComponentClassName="IstasyonlarTableAdapter" Name="Istasyonlar" UserDataComponentName="IstasyonlarTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="masterConnectionString1 (Settings)" DbObjectName="master.dbo.Istasyonlar" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Istasyonlar] WHERE (([Istasyon_Id] = @Original_Istasyon_Id) AND ((@IsNull_Istasyon_Adi = 1 AND [Istasyon_Adi] IS NULL) OR ([Istasyon_Adi] = @Original_Istasyon_Adi)) AND ((@IsNull_Istasyon_No = 1 AND [Istasyon_No] IS NULL) OR ([Istasyon_No] = @Original_Istasyon_No)) AND ((@IsNull_Istasyon_Bayi_No = 1 AND [Istasyon_Bayi_No] IS NULL) OR ([Istasyon_Bayi_No] = @Original_Istasyon_Bayi_No)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Istasyon_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Istasyon_Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Istasyon_Adi" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Istasyon_Adi" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Istasyon_Adi" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Istasyon_Adi" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Istasyon_No" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Istasyon_No" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Istasyon_No" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Istasyon_No" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Istasyon_Bayi_No" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Istasyon_Bayi_No" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Istasyon_Bayi_No" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Istasyon_Bayi_No" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Istasyonlar] ([Istasyon_Adi], [Istasyon_No], [Istasyon_Bayi_No]) VALUES (@Istasyon_Adi, @Istasyon_No, @Istasyon_Bayi_No);
+SELECT Istasyon_Id, Istasyon_Adi, Istasyon_No, Istasyon_Bayi_No FROM Istasyonlar WHERE (Istasyon_Id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Istasyon_Adi" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Istasyon_Adi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Istasyon_No" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Istasyon_No" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Istasyon_Bayi_No" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Istasyon_Bayi_No" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Istasyon_Id, Istasyon_Adi, Istasyon_No, Istasyon_Bayi_No FROM dbo.Istasyonlar</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Istasyonlar] SET [Istasyon_Adi] = @Istasyon_Adi, [Istasyon_No] = @Istasyon_No, [Istasyon_Bayi_No] = @Istasyon_Bayi_No WHERE (([Istasyon_Id] = @Original_Istasyon_Id) AND ((@IsNull_Istasyon_Adi = 1 AND [Istasyon_Adi] IS NULL) OR ([Istasyon_Adi] = @Original_Istasyon_Adi)) AND ((@IsNull_Istasyon_No = 1 AND [Istasyon_No] IS NULL) OR ([Istasyon_No] = @Original_Istasyon_No)) AND ((@IsNull_Istasyon_Bayi_No = 1 AND [Istasyon_Bayi_No] IS NULL) OR ([Istasyon_Bayi_No] = @Original_Istasyon_Bayi_No)));
+SELECT Istasyon_Id, Istasyon_Adi, Istasyon_No, Istasyon_Bayi_No FROM Istasyonlar WHERE (Istasyon_Id = @Istasyon_Id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Istasyon_Adi" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Istasyon_Adi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Istasyon_No" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Istasyon_No" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Istasyon_Bayi_No" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Istasyon_Bayi_No" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Istasyon_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Istasyon_Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Istasyon_Adi" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Istasyon_Adi" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Istasyon_Adi" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Istasyon_Adi" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Istasyon_No" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Istasyon_No" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Istasyon_No" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Istasyon_No" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Istasyon_Bayi_No" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Istasyon_Bayi_No" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Istasyon_Bayi_No" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Istasyon_Bayi_No" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Istasyon_Id" ColumnName="Istasyon_Id" DataSourceName="master.dbo.Istasyonlar" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Istasyon_Id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Istasyon_Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Istasyon_Id" DataSetColumn="Istasyon_Id" />
+              <Mapping SourceColumn="Istasyon_Adi" DataSetColumn="Istasyon_Adi" />
+              <Mapping SourceColumn="Istasyon_No" DataSetColumn="Istasyon_No" />
+              <Mapping SourceColumn="Istasyon_Bayi_No" DataSetColumn="Istasyon_Bayi_No" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UrunlerTableAdapter" GeneratorDataComponentClassName="UrunlerTableAdapter" Name="Urunler" UserDataComponentName="UrunlerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="masterConnectionString1 (Settings)" DbObjectName="master.dbo.Urunler" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Urunler] WHERE (([Urun_Id] = @Original_Urun_Id) AND ((@IsNull_Urun_Adi = 1 AND [Urun_Adi] IS NULL) OR ([Urun_Adi] = @Original_Urun_Adi)) AND ((@IsNull_Urun_Marka = 1 AND [Urun_Marka] IS NULL) OR ([Urun_Marka] = @Original_Urun_Marka)) AND ((@IsNull_Urun_Fiyat = 1 AND [Urun_Fiyat] IS NULL) OR ([Urun_Fiyat] = @Original_Urun_Fiyat)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Urun_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Urun_Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Urun_Adi" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Urun_Adi" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Urun_Adi" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Urun_Adi" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Urun_Marka" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Urun_Marka" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Urun_Marka" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Urun_Marka" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Urun_Fiyat" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Urun_Fiyat" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Urun_Fiyat" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Urun_Fiyat" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Urunler] ([Urun_Adi], [Urun_Marka], [Urun_Fiyat], [Aciklama]) VALUES (@Urun_Adi, @Urun_Marka, @Urun_Fiyat, @Aciklama);
+SELECT Urun_Id, Urun_Adi, Urun_Marka, Urun_Fiyat, Aciklama FROM Urunler WHERE (Urun_Id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Urun_Adi" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Urun_Adi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Urun_Marka" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Urun_Marka" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Urun_Fiyat" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Urun_Fiyat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Aciklama" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Aciklama" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Urun_Id, Urun_Adi, Urun_Marka, Urun_Fiyat, Aciklama FROM dbo.Urunler</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Urunler] SET [Urun_Adi] = @Urun_Adi, [Urun_Marka] = @Urun_Marka, [Urun_Fiyat] = @Urun_Fiyat, [Aciklama] = @Aciklama WHERE (([Urun_Id] = @Original_Urun_Id) AND ((@IsNull_Urun_Adi = 1 AND [Urun_Adi] IS NULL) OR ([Urun_Adi] = @Original_Urun_Adi)) AND ((@IsNull_Urun_Marka = 1 AND [Urun_Marka] IS NULL) OR ([Urun_Marka] = @Original_Urun_Marka)) AND ((@IsNull_Urun_Fiyat = 1 AND [Urun_Fiyat] IS NULL) OR ([Urun_Fiyat] = @Original_Urun_Fiyat)));
+SELECT Urun_Id, Urun_Adi, Urun_Marka, Urun_Fiyat, Aciklama FROM Urunler WHERE (Urun_Id = @Urun_Id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Urun_Adi" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Urun_Adi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Urun_Marka" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Urun_Marka" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Urun_Fiyat" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Urun_Fiyat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Aciklama" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Aciklama" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Urun_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Urun_Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Urun_Adi" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Urun_Adi" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Urun_Adi" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Urun_Adi" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Urun_Marka" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Urun_Marka" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Urun_Marka" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Urun_Marka" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Urun_Fiyat" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Urun_Fiyat" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Urun_Fiyat" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Urun_Fiyat" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Urun_Id" ColumnName="Urun_Id" DataSourceName="master.dbo.Urunler" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Urun_Id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Urun_Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Urun_Id" DataSetColumn="Urun_Id" />
+              <Mapping SourceColumn="Urun_Adi" DataSetColumn="Urun_Adi" />
+              <Mapping SourceColumn="Urun_Marka" DataSetColumn="Urun_Marka" />
+              <Mapping SourceColumn="Urun_Fiyat" DataSetColumn="Urun_Fiyat" />
+              <Mapping SourceColumn="Aciklama" DataSetColumn="Aciklama" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="masterDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="masterDataSet" msprop:Generator_UserDSName="masterDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Depo" msprop:Generator_TableClassName="DepoDataTable" msprop:Generator_TableVarName="tableDepo" msprop:Generator_RowChangedName="DepoRowChanged" msprop:Generator_TablePropName="Depo" msprop:Generator_RowDeletingName="DepoRowDeleting" msprop:Generator_RowChangingName="DepoRowChanging" msprop:Generator_RowEvHandlerName="DepoRowChangeEventHandler" msprop:Generator_RowDeletedName="DepoRowDeleted" msprop:Generator_RowClassName="DepoRow" msprop:Generator_UserTableName="Depo" msprop:Generator_RowEvArgName="DepoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Depo_Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnDepo_Id" msprop:Generator_ColumnPropNameInRow="Depo_Id" msprop:Generator_ColumnPropNameInTable="Depo_IdColumn" msprop:Generator_UserColumnName="Depo_Id" type="xs:int" />
+              <xs:element name="Urun_Id" msprop:Generator_ColumnVarNameInTable="columnUrun_Id" msprop:Generator_ColumnPropNameInRow="Urun_Id" msprop:Generator_ColumnPropNameInTable="Urun_IdColumn" msprop:Generator_UserColumnName="Urun_Id" type="xs:int" minOccurs="0" />
+              <xs:element name="Seri_No" msprop:Generator_ColumnVarNameInTable="columnSeri_No" msprop:Generator_ColumnPropNameInRow="Seri_No" msprop:Generator_ColumnPropNameInTable="Seri_NoColumn" msprop:Generator_UserColumnName="Seri_No" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Adet" msprop:Generator_ColumnVarNameInTable="columnAdet" msprop:Generator_ColumnPropNameInRow="Adet" msprop:Generator_ColumnPropNameInTable="AdetColumn" msprop:Generator_UserColumnName="Adet" type="xs:int" minOccurs="0" />
+              <xs:element name="Tarih" msprop:Generator_ColumnVarNameInTable="columnTarih" msprop:Generator_ColumnPropNameInRow="Tarih" msprop:Generator_ColumnPropNameInTable="TarihColumn" msprop:Generator_UserColumnName="Tarih" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Aciklama" msprop:Generator_ColumnVarNameInTable="columnAciklama" msprop:Generator_ColumnPropNameInRow="Aciklama" msprop:Generator_ColumnPropNameInTable="AciklamaColumn" msprop:Generator_UserColumnName="Aciklama" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Urun_Adi" msprop:Generator_ColumnVarNameInTable="columnUrun_Adi" msprop:Generator_ColumnPropNameInRow="Urun_Adi" msprop:Generator_ColumnPropNameInTable="Urun_AdiColumn" msprop:Generator_UserColumnName="Urun_Adi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DepoCikis" msprop:Generator_TableClassName="DepoCikisDataTable" msprop:Generator_TableVarName="tableDepoCikis" msprop:Generator_RowChangedName="DepoCikisRowChanged" msprop:Generator_TablePropName="DepoCikis" msprop:Generator_RowDeletingName="DepoCikisRowDeleting" msprop:Generator_RowChangingName="DepoCikisRowChanging" msprop:Generator_RowEvHandlerName="DepoCikisRowChangeEventHandler" msprop:Generator_RowDeletedName="DepoCikisRowDeleted" msprop:Generator_RowClassName="DepoCikisRow" msprop:Generator_UserTableName="DepoCikis" msprop:Generator_RowEvArgName="DepoCikisRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DepoCikis_Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnDepoCikis_Id" msprop:Generator_ColumnPropNameInRow="DepoCikis_Id" msprop:Generator_ColumnPropNameInTable="DepoCikis_IdColumn" msprop:Generator_UserColumnName="DepoCikis_Id" type="xs:int" />
+              <xs:element name="Depo_Id" msprop:Generator_ColumnVarNameInTable="columnDepo_Id" msprop:Generator_ColumnPropNameInRow="Depo_Id" msprop:Generator_ColumnPropNameInTable="Depo_IdColumn" msprop:Generator_UserColumnName="Depo_Id" type="xs:int" />
+              <xs:element name="Istasyon_Id" msprop:Generator_ColumnVarNameInTable="columnIstasyon_Id" msprop:Generator_ColumnPropNameInRow="Istasyon_Id" msprop:Generator_ColumnPropNameInTable="Istasyon_IdColumn" msprop:Generator_UserColumnName="Istasyon_Id" type="xs:int" />
+              <xs:element name="Tarih" msprop:Generator_ColumnVarNameInTable="columnTarih" msprop:Generator_ColumnPropNameInRow="Tarih" msprop:Generator_ColumnPropNameInTable="TarihColumn" msprop:Generator_UserColumnName="Tarih" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Aciklama" msprop:Generator_ColumnVarNameInTable="columnAciklama" msprop:Generator_ColumnPropNameInRow="Aciklama" msprop:Generator_ColumnPropNameInTable="AciklamaColumn" msprop:Generator_UserColumnName="Aciklama" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Adet" msprop:Generator_ColumnVarNameInTable="columnAdet" msprop:Generator_ColumnPropNameInRow="Adet" msprop:Generator_ColumnPropNameInTable="AdetColumn" msprop:Generator_UserColumnName="Adet" type="xs:int" minOccurs="0" />
+              <xs:element name="Istasyon_Adi" msprop:Generator_ColumnVarNameInTable="columnIstasyon_Adi" msprop:Generator_ColumnPropNameInRow="Istasyon_Adi" msprop:Generator_ColumnPropNameInTable="Istasyon_AdiColumn" msprop:Generator_UserColumnName="Istasyon_Adi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Urun_Adi" msprop:Generator_ColumnVarNameInTable="columnUrun_Adi" msprop:Generator_ColumnPropNameInRow="Urun_Adi" msprop:Generator_ColumnPropNameInTable="Urun_AdiColumn" msprop:Generator_UserColumnName="Urun_Adi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Urun_Id" msprop:Generator_ColumnVarNameInTable="columnUrun_Id" msprop:Generator_ColumnPropNameInRow="Urun_Id" msprop:Generator_ColumnPropNameInTable="Urun_IdColumn" msprop:Generator_UserColumnName="Urun_Id" type="xs:int" minOccurs="0" />
+              <xs:element name="Seri_No" msprop:Generator_ColumnVarNameInTable="columnSeri_No" msprop:Generator_ColumnPropNameInRow="Seri_No" msprop:Generator_ColumnPropNameInTable="Seri_NoColumn" msprop:Generator_UserColumnName="Seri_No" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Istasyonlar" msprop:Generator_TableClassName="IstasyonlarDataTable" msprop:Generator_TableVarName="tableIstasyonlar" msprop:Generator_RowChangedName="IstasyonlarRowChanged" msprop:Generator_TablePropName="Istasyonlar" msprop:Generator_RowDeletingName="IstasyonlarRowDeleting" msprop:Generator_RowChangingName="IstasyonlarRowChanging" msprop:Generator_RowEvHandlerName="IstasyonlarRowChangeEventHandler" msprop:Generator_RowDeletedName="IstasyonlarRowDeleted" msprop:Generator_RowClassName="IstasyonlarRow" msprop:Generator_UserTableName="Istasyonlar" msprop:Generator_RowEvArgName="IstasyonlarRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Istasyon_Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIstasyon_Id" msprop:Generator_ColumnPropNameInRow="Istasyon_Id" msprop:Generator_ColumnPropNameInTable="Istasyon_IdColumn" msprop:Generator_UserColumnName="Istasyon_Id" type="xs:int" />
+              <xs:element name="Istasyon_Adi" msprop:Generator_ColumnVarNameInTable="columnIstasyon_Adi" msprop:Generator_ColumnPropNameInRow="Istasyon_Adi" msprop:Generator_ColumnPropNameInTable="Istasyon_AdiColumn" msprop:Generator_UserColumnName="Istasyon_Adi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Istasyon_No" msprop:Generator_ColumnVarNameInTable="columnIstasyon_No" msprop:Generator_ColumnPropNameInRow="Istasyon_No" msprop:Generator_ColumnPropNameInTable="Istasyon_NoColumn" msprop:Generator_UserColumnName="Istasyon_No" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Istasyon_Bayi_No" msprop:Generator_ColumnVarNameInTable="columnIstasyon_Bayi_No" msprop:Generator_ColumnPropNameInRow="Istasyon_Bayi_No" msprop:Generator_ColumnPropNameInTable="Istasyon_Bayi_NoColumn" msprop:Generator_UserColumnName="Istasyon_Bayi_No" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Urunler" msprop:Generator_TableClassName="UrunlerDataTable" msprop:Generator_TableVarName="tableUrunler" msprop:Generator_RowChangedName="UrunlerRowChanged" msprop:Generator_TablePropName="Urunler" msprop:Generator_RowDeletingName="UrunlerRowDeleting" msprop:Generator_RowChangingName="UrunlerRowChanging" msprop:Generator_RowEvHandlerName="UrunlerRowChangeEventHandler" msprop:Generator_RowDeletedName="UrunlerRowDeleted" msprop:Generator_RowClassName="UrunlerRow" msprop:Generator_UserTableName="Urunler" msprop:Generator_RowEvArgName="UrunlerRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Urun_Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUrun_Id" msprop:Generator_ColumnPropNameInRow="Urun_Id" msprop:Generator_ColumnPropNameInTable="Urun_IdColumn" msprop:Generator_UserColumnName="Urun_Id" type="xs:int" />
+              <xs:element name="Urun_Adi" msprop:Generator_ColumnVarNameInTable="columnUrun_Adi" msprop:Generator_ColumnPropNameInRow="Urun_Adi" msprop:Generator_ColumnPropNameInTable="Urun_AdiColumn" msprop:Generator_UserColumnName="Urun_Adi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Urun_Marka" msprop:Generator_ColumnVarNameInTable="columnUrun_Marka" msprop:Generator_ColumnPropNameInRow="Urun_Marka" msprop:Generator_ColumnPropNameInTable="Urun_MarkaColumn" msprop:Generator_UserColumnName="Urun_Marka" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Urun_Fiyat" msprop:Generator_ColumnVarNameInTable="columnUrun_Fiyat" msprop:Generator_ColumnPropNameInRow="Urun_Fiyat" msprop:Generator_ColumnPropNameInTable="Urun_FiyatColumn" msprop:Generator_UserColumnName="Urun_Fiyat" type="xs:int" minOccurs="0" />
+              <xs:element name="Aciklama" msprop:Generator_ColumnVarNameInTable="columnAciklama" msprop:Generator_ColumnPropNameInRow="Aciklama" msprop:Generator_ColumnPropNameInTable="AciklamaColumn" msprop:Generator_UserColumnName="Aciklama" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Depo" />
+      <xs:field xpath="mstns:Depo_Id" />
+    </xs:unique>
+    <xs:unique name="DepoCikis_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DepoCikis" />
+      <xs:field xpath="mstns:DepoCikis_Id" />
+    </xs:unique>
+    <xs:unique name="Istasyonlar_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Istasyonlar" />
+      <xs:field xpath="mstns:Istasyon_Id" />
+    </xs:unique>
+    <xs:unique name="Urunler_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Urunler" />
+      <xs:field xpath="mstns:Urun_Id" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK__Depo__Urun_Id__4707859D" msdata:parent="Urunler" msdata:child="Depo" msdata:parentkey="Urun_Id" msdata:childkey="Urun_Id" msprop:Generator_UserChildTable="Depo" msprop:Generator_ChildPropName="GetDepoRows" msprop:Generator_UserRelationName="FK__Depo__Urun_Id__4707859D" msprop:Generator_ParentPropName="UrunlerRow" msprop:Generator_RelationVarName="relationFK__Depo__Urun_Id__4707859D" msprop:Generator_UserParentTable="Urunler" />
+      <msdata:Relationship name="FK__DepoCikis__Depo___51851410" msdata:parent="Depo" msdata:child="DepoCikis" msdata:parentkey="Depo_Id" msdata:childkey="Depo_Id" msprop:Generator_UserChildTable="DepoCikis" msprop:Generator_ChildPropName="GetDepoCikisRows" msprop:Generator_UserRelationName="FK__DepoCikis__Depo___51851410" msprop:Generator_RelationVarName="relationFK__DepoCikis__Depo___51851410" msprop:Generator_UserParentTable="Depo" msprop:Generator_ParentPropName="DepoRow" />
+      <msdata:Relationship name="FK__DepoCikis__Istas__52793849" msdata:parent="Istasyonlar" msdata:child="DepoCikis" msdata:parentkey="Istasyon_Id" msdata:childkey="Istasyon_Id" msprop:Generator_UserChildTable="DepoCikis" msprop:Generator_ChildPropName="GetDepoCikisRows" msprop:Generator_UserRelationName="FK__DepoCikis__Istas__52793849" msprop:Generator_ParentPropName="IstasyonlarRow" msprop:Generator_RelationVarName="relationFK__DepoCikis__Istas__52793849" msprop:Generator_UserParentTable="Istasyonlar" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
